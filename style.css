@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f7ff;
+    color: #25233a;
+    min-height: 100vh;
+}
+
+nav {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6957d9;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #55536b;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #6957d9;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #6957d9;
+    left: 0;
+    bottom: -8px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    background: linear-gradient(135deg, #eeeaff, #fff4f7);
+}
+
+.hero-text {
+    max-width: 600px;
+    animation: slideIn 0.8s ease;
+}
+
+.tag {
+    color: #6957d9;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 55px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #6957d9;
+}
+
+.hero-text > p:not(.tag),
+.intro {
+    color: #68667a;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #6957d9;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(105,87,217,0.3);
+}
+
+.secondary {
+    background: white;
+    color: #6957d9;
+}
+
+.hero-card {
+    width: 320px;
+    padding: 35px;
+    text-align: center;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(70,60,120,0.15);
+    animation: float 3s ease-in-out infinite;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    margin: auto auto 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #e5e0ff;
+    color: #6957d9;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hero-card p {
+    margin: 12px 0 25px;
+    color: #777487;
+}
+
+.progress {
+    height: 10px;
+    background: #eeeef5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress div {
+    width: 75%;
+    height: 100%;
+    background: #6957d9;
+    animation: progress 1.5s ease;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 60px 10%;
+}
+
+.feature,
+.tip-card,
+.task,
+.schedule-item {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.feature {
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature:hover,
+.tip-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature span,
+.tip-card span {
+    font-size: 35px;
+}
+
+.feature h3,
+.tip-card h2 {
+    margin: 15px 0 10px;
+}
+
+.feature p,
+.tip-card p {
+    color: #777487;
+    line-height: 1.6;
+}
+
+.page {
+    padding: 70px 10%;
+    min-height: calc(100vh - 140px);
+}
+
+.page h1 {
+    font-size: 48px;
+}
+
+.task-container,
+.schedule {
+    max-width: 850px;
+    margin-top: 35px;
+}
+
+.task,
+.schedule-item {
+    padding: 22px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.task:hover,
+.schedule-item:hover {
+    transform: translateX(6px);
+}
+
+.task p,
+.schedule-item p {
+    color: #777487;
+    margin-top: 6px;
+}
+
+.task button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #eeeaff;
+    color: #6957d9;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.task button:hover {
+    background: #6957d9;
+    color: white;
+}
+
+.schedule-item {
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.schedule-item strong {
+    color: #6957d9;
+    min-width: 90px;
+}
+
+.tips-grid {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tip-card {
+    padding: 30px;
+    transition: 0.3s;
+}
+
+form {
+    max-width: 650px;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #e9e7f2;
+    border-radius: 12px;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6957d9;
+}
+
+#message {
+    margin-top: 20px;
+    color: #6957d9;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #25233a;
+    color: white;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes progress {
+    from { width: 0; }
+    to { width: 75%; }
+}
+
+@media (max-width: 750px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: white;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.show {
+        display: flex;
+        animation: slideIn 0.3s ease;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .features,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .task,
+    .schedule-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

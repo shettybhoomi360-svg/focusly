@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focusly | Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">✨ Focusly</div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a class="active" href="tasks.html">Tasks</a>
+        <a href="planner.html">Planner</a>
+        <a href="tips.html">Tips</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<section class="page">
+    <p class="tag">STAY ORGANIZED</p>
+    <h1>My Tasks</h1>
+    <p class="intro">A simple place to keep track of what needs to be done.</p>
+
+    <div class="task-container">
+        <div class="task">
+            <div>
+                <h3>📚 Complete assignment</h3>
+                <p>Finish today's college assignment</p>
+            </div>
+            <button onclick="completeTask(this)">Complete</button>
+        </div>
+
+        <div class="task">
+            <div>
+                <h3>💻 Practice coding</h3>
+                <p>Spend 30 minutes practicing Java</p>
+            </div>
+            <button onclick="completeTask(this)">Complete</button>
+        </div>
+
+        <div class="task">
+            <div>
+                <h3>📖 Read a chapter</h3>
+                <p>Read one chapter before sleeping</p>
+            </div>
+            <button onclick="completeTask(this)">Complete</button>
+        </div>
+
+        <div class="task">
+            <div>
+                <h3>☕ Take a break</h3>
+                <p>Relax and recharge for 15 minutes</p>
+            </div>
+            <button onclick="completeTask(this)">Complete</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Focusly</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
